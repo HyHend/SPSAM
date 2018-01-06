@@ -9,7 +9,7 @@ Based purely on accelerometer data. Uses a fast fourier transform to retrieve th
 This normalized frequency turned out to be good at differentiating between different activities such as walking, running, cycling and sitting/resting.
 
 Example showing differences between activities. This knowledge was used to classify the actual activity:
-![Activity feature plot](https://github.com/HyHend/SPSAM/blob/master/img/activities_fft_example.png)
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/activities_fft_example.png" alt="Activity feature plot" width="650px">
 
 ### 2. Particle system localization
 Based on article 4. The idea behind the particle system localization is:
