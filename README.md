@@ -33,38 +33,41 @@ Because measurements are not perfect:
 ##### Example 1 within the app:
 There's only one long hallway, the simplest example to show how we can find our position.
 
-Uniform init:
+0. Uniform init:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_0.png" alt="Particle filter init" width="550px">
 
-Walk left to about 330 (the end of the wider part of the hallway):
+
+1. Walk left to about 330 (the end of the wider part of the hallway):
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_1.png" alt="Particle filter walk left" width="550px">
 
-Walk further left to 040. Note that the door in the hallway resulted in a significant loss of "correct" particles:
+
+2. Walk further left to 040. Note that the door in the hallway resulted in a significant loss of "correct" particles:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_2.png" alt="Particle filter walk left more" width="550px">
 
-Walk further left and reach the end of the corridor. We're now fairly certain of our location:
+
+3. Walk further left and reach the end of the corridor. We're now fairly certain of our location:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_3.png" alt="Particle filter finish" width="550px">
 
 ##### Example 2 within the app:
 Walk up, walk left and then up again. Basically moving from one to another office on the floormap. Where could we be?
 
-Initial state:
+0. Initial state:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_init.png" alt="Particle filter init" width="550px">
 
-Walk up from 090 to the corridor:
+1. Walk up from 090 to the corridor:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up.png" alt="Particle filter walk up" width="550px">
 
-Walk left to office 290:
+2. Walk left to office 290:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left.png" alt="Particle filter walk left" width="550px">
 
-Walk up again, into the office (290) to the window:
+3. Walk up again, into the office (290) to the window:
 
 <img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left_then_up.png" alt="Particle filter walk up again" width="550px">
 
