@@ -32,24 +32,34 @@ Because measurements are not perfect:
 
 ##### Example 1 within the app:
 There's only one long hallway, the simplest example to show how we can find our position.
+
 Uniform init:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_0.png" alt="Particle filter init" width="450px">
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_0.png" alt="Particle filter init" width="550px">
+
 Walk left to about 330 (the end of the wider part of the hallway):
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_1.png" alt="Particle filter walk left" width="450px">
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_1.png" alt="Particle filter walk left" width="550px">
+
 Walk further left to 040. Note that the door in the hallway resulted in a significant loss of "correct" particles:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_2.png" alt="Particle filter walk left more" width="450px">
-- Walk further left and reach the end of the corridor. We're now fairly certain of our location:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_3.png" alt="Particle filter finish" width="450px">
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_2.png" alt="Particle filter walk left more" width="550px">
+
+Walk further left and reach the end of the corridor. We're now fairly certain of our location:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_3.png" alt="Particle filter finish" width="550px">
 
 ##### Example 2 within the app:
 Walk up, walk left and then up again. Basically moving from one to another office on the floormap. Where could we be?
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_init.png" alt="Particle filter init" width="450px">
+
+Initial state:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_init.png" alt="Particle filter init" width="550px">
+
 Walk up from 090 to the corridor:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up.png" alt="Particle filter walk up" width="450px">
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up.png" alt="Particle filter walk up" width="550px">
+
 Walk left to office 290:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left.png" alt="Particle filter walk left" width="450px">
-- Walk up again, into the office (290) to the window:
-<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left_then_up.png" alt="Particle filter walk up again" width="450px">
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left.png" alt="Particle filter walk left" width="550px">
+
+Walk up again, into the office (290) to the window:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left_then_up.png" alt="Particle filter walk up again" width="550px">
+
 As you can see, there still are multiple possibilities for our location. Walking around will further reduce to a lower amount of possibilities. (Note that this is a highly repetitive environment, which is not that well suited for our tests.)
 
 ### 3. WiFi signal strength/fingerprinting localization
