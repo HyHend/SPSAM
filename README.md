@@ -17,7 +17,7 @@ Based on article 4. The idea behind the particle system localization is:
 - You walk a path, for example 10 metres north and then 5 metres west.
 - At this moment, there are only so many possibilities on the floorplan where you could've walked this path (not walking through walls, desks etc.)
 
-This is where the particle system comes in. 
+This is where the particle system comes in:
 - When starting, the probability of you being on any point on the map is equal.
 - To approximate this, we uniformly distribute x "particles" over the floorplan.
 - When you move, each particle is moved with the amount of metres in the direction you walk.
@@ -25,16 +25,35 @@ This is where the particle system comes in.
 - After moving, it is to be noticed that groups of particles are formed at possible locations on the floorplan.
 - When the moved pattern is unique enough, there will only be one group. At your actual position.
 
-Because measurements are not perfect
+Because measurements are not perfect:
 - The particles are moved +/-x% of the actual distance (random, per particle).
 - The direction of the particles is, per particle, also randomly altered by +/-y%.
 - This decreases the accuracy, but will handle real-world imperfections. The outcome is similar.
 
-Example within the app:
-- todo
+##### Example 1 within the app:
+There's only one long hallway, the simplest example to show how we can find our position.
+Uniform init:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_0.png" alt="Particle filter init" width="450px">
+Walk left to about 330 (the end of the wider part of the hallway):
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_1.png" alt="Particle filter walk left" width="450px">
+Walk further left to 040. Note that the door in the hallway resulted in a significant loss of "correct" particles:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_2.png" alt="Particle filter walk left more" width="450px">
+- Walk further left and reach the end of the corridor. We're now fairly certain of our location:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_left_3.png" alt="Particle filter finish" width="450px">
 
-### 3. WIFI signal strength/fingerprinting localization
-Based on WIFI signal strength (RSSI). The idea behind this is from article 3, explaining Bayesian Indoor Positioning filters. The idea from this article is basically implemented as part of this application.
+##### Example 2 within the app:
+Walk up, walk left and then up again. Basically moving from one to another office on the floormap. Where could we be?
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_init.png" alt="Particle filter init" width="450px">
+Walk up from 090 to the corridor:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up.png" alt="Particle filter walk up" width="450px">
+Walk left to office 290:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left.png" alt="Particle filter walk left" width="450px">
+- Walk up again, into the office (290) to the window:
+<img src="https://github.com/HyHend/SPSAM/blob/master/img/particlefilter_first_up_then_left_then_up.png" alt="Particle filter walk up again" width="450px">
+As you can see, there still are multiple possibilities for our location. Walking around will further reduce to a lower amount of possibilities. (Note that this is a highly repetitive environment, which is not that well suited for our tests.)
+
+### 3. WiFi signal strength/fingerprinting localization
+Based on WiFi signal strength (RSSI). The idea behind this is from article 3, explaining Bayesian Indoor Positioning filters. The idea from this article is basically implemented as part of this application.
 
 #### Articles used
 1. G. F. R. B. Eladio Martin, Oriol Vinyals. Precise indoor localization using smart phones. 2010.
